@@ -83,7 +83,7 @@ const user = {
 user.sayUserName()
 user.sayUserNameArrow()
 
-// 3 - Filter
+// 3 - filter
 
 const arr = [1, 2, 3, 4, 5]
 
@@ -101,7 +101,7 @@ const users = [
     { name: 'Matheus', available: true },
     { name: 'Pedro', available: false},
     {name: 'João', available: false},
-    {name: 'Marcos', available},
+    {name: 'Marcos', available: true},
 ]
 
 const availableUsers = users.filter((user) => user.available)
@@ -109,3 +109,19 @@ const notAvailableUsers = users.filter((user) => !user.available)
 
 console.log(availableUsers)
 console.log(notAvailableUsers);
+
+// 4 - map
+const products = [
+    {name: 'Camisa', price: 10.99, category: 'Roupas'},
+    {name: 'Chaleira Elétrica', price: 49.99, category: 'Eletro'},
+    {name: 'Fogão', price: 400, category: 'Eletro'},
+    {name: 'Calça Jeans', price: 50.99, category: 'Roupas'},
+]
+
+products.map((product) => {
+    if (product.category === 'Roupas') {
+        product.onSale = true
+    }
+})
+
+console.log(products);
