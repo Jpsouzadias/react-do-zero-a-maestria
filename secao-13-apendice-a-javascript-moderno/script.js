@@ -1,4 +1,4 @@
-/* // 1 - var, let e const
+// 1 - var, let e const
 var x = 10
 var y = 15
 
@@ -151,7 +151,7 @@ const productDetails = {
 
 const {name: productName, price, category: produtcCategory, color} = productDetails
 
-console.log(`o nome do produte é ${productName}, custa R$${price}, pertence a categoria ${produtcCategory}`); */
+console.log(`o nome do produte é ${productName}, custa R$${price}, pertence a categoria ${produtcCategory}`); 
 
 //7 - spread operator
 const a1 = [1, 2, 3]
@@ -171,7 +171,7 @@ const otherInfos = {km: 100000, price: 49000}
 
 const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
 
-console.log(car);
+console.log(car); 
 
 // 8 - classe
 class Product {
@@ -195,4 +195,28 @@ console.log(shirt.productWithDiscount(50));
 
 const tenis = new Product("Tênis", 120)
 
-console.log(tenis.productWithDiscount(20));
+console.log(tenis.name);
+console.log(tenis.productWithDiscount(20)); 
+
+// 9 - herança
+class ProductWithAttributes extends Product {
+    constructor(name, price, colors) {
+        super(name, price)
+        this.colors = colors
+    }
+    
+    shorColors(){
+        console.log("as cores são:")
+        this.colors.forEach((color) => {
+            console.log(color);
+        })
+    }
+}
+
+const hat = new ProductWithAttributes("Chapéu", 29.99, ["Preto", "Azul", "Verde"])
+
+console.log(hat.nome)
+
+console.log(hat.productWithDiscount(30))
+
+hat.shorColors();
