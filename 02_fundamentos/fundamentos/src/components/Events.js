@@ -26,7 +26,7 @@ const Events = () => {
                     if (true) {
                         console.log('Isso não deveria existir!');
                     }
-                }}>Clica aqui, por favor</button>
+                }}>Clica aqui, por favor!</button>
             </div>
             {renderSomething(true)}
             {renderSomething(false)}
