@@ -5,6 +5,7 @@ import ListRender from './components/ListRender';
 import ShowUserName from './components/ShowUserName';
 import CardDetails from './components/CardDetails';
 import ConditionalRender from './components/ConditionalRender';
+import Fragment from './components/Fragment';
 
 import City from './assets/city.jpg';
 import { useState } from 'react';
@@ -49,6 +50,8 @@ function App() {
         newCar={car.newCar} 
         />
       ))}
+      {/* Fragment */}
+      <Fragment propFragment="teste" />
     </div>
   );
 }
