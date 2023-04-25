@@ -1,14 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 
+import City from './assets/city.jpg';
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import ShowUserName from './components/ShowUserName';
 import CardDetails from './components/CardDetails';
 import ConditionalRender from './components/ConditionalRender';
 import Fragment from './components/Fragment';
-
-import City from './assets/city.jpg';
-import { useState } from 'react';
+import Container from './components/Container';
 
 function App() {
   /* const name = "Pedro"; */
@@ -52,6 +52,13 @@ function App() {
       ))}
       {/* Fragment */}
       <Fragment propFragment="teste" />
+      {/* Children */}
+      <Container myValue="testing">
+        <p>E este é o conteúdo</p>
+      </Container>
+      <Container myValue="testing 2">
+        <h5>E este é o conteúdo</h5>
+      </Container>
     </div>
   );
 }
