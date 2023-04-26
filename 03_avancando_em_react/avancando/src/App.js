@@ -9,6 +9,7 @@ import CardDetails from './components/CardDetails';
 import ConditionalRender from './components/ConditionalRender';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   /* const name = "Pedro"; */
@@ -19,6 +20,10 @@ function App() {
     { id: 2, brand: "Audi", color: "Preto", newCar: false, km: 3590 },
     { id: 3, brand: "Porsche", color: "Azul", newCar: false, km: 234 }
   ]
+
+  function ShowMessage() {
+    console.log("Evento do componente pai!");
+  }
 
   return (
     <div className="App">
@@ -44,6 +49,7 @@ function App() {
       {/*  loop em array de objetos */}
       {cars.map((car) => (
         <CardDetails 
+        key={car.id}
         brand={car.brand} 
         color={car.color} 
         km={car.km} 
@@ -59,6 +65,8 @@ function App() {
       <Container myValue="testing 2">
         <h5>E este é o conteúdo</h5>
       </Container>
+      {/* executar função */}
+      < ExecuteFunction myFunction={ShowMessage}/>
     </div>
   );
 }
