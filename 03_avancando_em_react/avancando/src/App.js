@@ -10,6 +10,8 @@ import ConditionalRender from './components/ConditionalRender';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
   /* const name = "Pedro"; */
@@ -23,6 +25,12 @@ function App() {
 
   function ShowMessage() {
     console.log("Evento do componente pai!");
+  }
+
+  const [message, setMessage] = useState("");
+
+  const HandleMessage = (msg) => {
+    setMessage(msg);
   }
 
   return (
@@ -67,6 +75,9 @@ function App() {
       </Container>
       {/* executar função */}
       < ExecuteFunction myFunction={ShowMessage}/>
+      {/* state lift */}
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={HandleMessage}/>
     </div>
   );
 }
