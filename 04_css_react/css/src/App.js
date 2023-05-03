@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import './App.css';
 import MyComponent from './components/MyComponent';
 
@@ -6,6 +7,8 @@ import { useState } from 'react';
 function App() {
   const n = 15;
   const [name] = useState("João");
+
+  const redTitle = true;
 
   return (
     <div className="App">
@@ -35,6 +38,8 @@ function App() {
           >
             Teste nome
             </h2>
+            {/* Classe dinâmica */}
+            <h2 className={redTitle ? "red-title" : "title"}>Este título vai ter class dinâmica</h2>
     </div>
   );
 }
