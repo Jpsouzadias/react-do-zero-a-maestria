@@ -2,8 +2,6 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 
-
-
 // 4 - custom hook
 import { useFetch } from "./hooks/useFetch" ;
 
@@ -13,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   // 4 - custom
-  const { data: items, httpConfig } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState ("");
@@ -36,10 +34,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const product = (
+    const product = {
       name,
       price
-    );
+    };
 
     /* const res = await fetch(url, {
       method: "POST",
@@ -90,6 +88,7 @@ function App() {
           </label>
           {/* 7 - state de loading no post */}
           {!loading && <input type="submit" disabled value="Aguarde"></input>}
+          {error && <p>{error}</p>}
           {!loading && <input type="submit" value="Criar"></input>}
         </form>
       </div>
