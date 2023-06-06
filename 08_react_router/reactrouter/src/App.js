@@ -22,6 +22,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* 6 - nested route */}
+          <Route path="/product/:id/info" element={<Info />} ></Route>
           {/* 4 - rota dinamica */}
           <Route path="/product/:id" element={<Product />} ></Route>
         </Routes>      
