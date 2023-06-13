@@ -21,6 +21,7 @@ function App() {
       <BrowserRouter>
       {/* 2 - links com react router */}
         <Navbar />
+        {/* 9 - search */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
