@@ -5,6 +5,7 @@ import{BrowserRouter, Routes, Route} from 'react-router-dom'
 
 // components
 import Navbar from "./components/Navbar";
+import SearchForm from "./components/SearchForm";
 
 // pages
 import Home from './pages/Home';
@@ -12,6 +13,7 @@ import About from './pages/About';
 import Product from './pages/Product';
 import Info from "./pages/Info";
 import NotFound from './pages/NotFound';
+import Search from './pages/Search';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
       {/* 2 - links com react router */}
         <Navbar />
         {/* 9 - search */}
+        <SearchForm />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -29,7 +32,9 @@ function App() {
           <Route path="/product/:id/info" element={<Info />} ></Route>
           {/* 4 - rota dinamica */}
           <Route path="/product/:id" element={<Product />} ></Route>
-          {/* no match route */}
+          {/* 9 - search */}
+          <Route path='/search' element={<Search />} />
+          {/* 7- no match route */}
           <Route path="*" element={<NotFound />} />
         </Routes>      
       </BrowserRouter>
