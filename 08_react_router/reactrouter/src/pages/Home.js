@@ -8,6 +8,7 @@ const Home = () => {
 
   const url = 'http://localhost:3000/products'
 
+  // eslint-disable-next-line no-unused-vars
   const {data: items, loading, error} = useFetch(url) 
 
   return <div>

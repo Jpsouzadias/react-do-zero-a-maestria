@@ -4,6 +4,7 @@ import { useFetch } from "../hooks/useFetch";
 const Search = () => {
     const [searchParams] = useSearchParams()
     const url = "http://localhost:3000/producst?" + searchParams
+    // eslint-disable-next-line no-unused-vars
     const {data: items, loading, error} = useFetch(url);
 
 
