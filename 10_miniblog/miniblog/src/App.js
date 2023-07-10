@@ -15,6 +15,8 @@ import Home from './pages/Home/Home.js';
 import About from './pages/About/About.js';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import CreatePost from './pages/CreatePost/CreatePost';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 // components
 import Navbar from './components/Navbar';
@@ -50,6 +52,8 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/login' element={<Login />} />
               <Route path='/Register' element={<Register />} />
+              <Route path='/posts/create' element={<CreatePost />} />
+              <Route path='/dashboard' element={<Dashboard />} />
             </Routes>
           </div>
           <Footer />
