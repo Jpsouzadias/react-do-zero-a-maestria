@@ -30,7 +30,7 @@ const CreatePost = () => {
           <label>
             <span>URL da imagem:</span>
             <input type="text" name='image' required placeholder='Insira uma imagem que representa o seu post'
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setImage(e.target.value)}
             value={image}
           />
           </label>
