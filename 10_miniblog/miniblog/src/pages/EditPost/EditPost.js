@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../contexts/AuthContext";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
-import { useUpdateDocument } from "../../hooks/useUpdateDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument.js";
 
 const EditPost = () => {
   const { id } = useParams();
