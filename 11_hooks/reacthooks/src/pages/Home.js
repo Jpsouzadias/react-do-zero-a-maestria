@@ -10,6 +10,7 @@ import HookUseRef from '../components/HookUseRef';
 import HookUseCallback from '../components/HookUseCallback';
 import HookUseMemo from '../components/HookUseMemo';
 import HookUseEffectLayout from '../components/HookUseLayoutEffect';
+import HookUseImperativeHandle from '../components/HookUseImperativeHandle';
 
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
       <HookUseCallback />
       <HookUseMemo />
       <HookUseEffectLayout />
+      <HookUseImperativeHandle />
     </div>
   )
 }
