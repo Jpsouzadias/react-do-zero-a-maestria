@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const userSchema = new Schema(
+const photoSchema = new Schema(
     {
         name: String,
         title: String,
