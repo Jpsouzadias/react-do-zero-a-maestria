@@ -3,7 +3,7 @@ const {Schema} = mongoose;
 
 const photoSchema = new Schema(
     {
-        name: String,
+        image: String,
         title: String,
         likes: Array,
         comments: Array,
@@ -15,6 +15,6 @@ const photoSchema = new Schema(
     }
 )
 
-const Photo = mongoose.model("Photo", photoSchema);
+Photo = mongoose.model("Photo", photoSchema);
 
 module.exports = Photo;
