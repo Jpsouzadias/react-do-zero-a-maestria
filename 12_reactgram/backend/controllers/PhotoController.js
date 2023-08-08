@@ -170,7 +170,9 @@ const updatePhoto = async (req, res) => {
       };
 
       // Put user id in likes array
-      photo.likes.push(req.user._id)
+      photo.likes.push(reqUser._id)
+
+      photo.save()
 
       res
       .status(200)
