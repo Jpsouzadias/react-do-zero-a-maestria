@@ -30,32 +30,33 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-        /* state.loading = false;
+        state.loading = false;
         state.error = false;
-        state.success = false; */
+        state.success = false; 
     },
   },
   extraReducers: (builder) => {
     builder
     .addCase(register.pending, (state) => {
-        /* state.loading = true;
-        state.error = false; */
+        state.loading = true;
+        state.error = false;
     })
     .addCase(register.fulfilled, (state, action) => {
-        /* state.loading = false
+        state.loading = false
         state.success = true
         state.error = null
-        state.user = action.payload; */
+        state.user = action.payload;
     })
     .addCase(register.rejected, (state, action) => {
-        /* state.loading = false;
+        state.loading = false;
         state.error = action.payload;
-        state.user = null; */
+        state.user = null;
     })
 },
 })
 
 // Action creators are generated for each case reducer function
 export const { increment, decrement, incrementByAmount } = authSlice.actions
+export const { reset } = authSlice.actions;
 
 export default authSlice.reducer
