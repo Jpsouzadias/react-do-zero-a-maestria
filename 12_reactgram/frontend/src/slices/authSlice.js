@@ -12,12 +12,12 @@ const initialState = {
 
 // Register an user and sign in 
 export const register = createAsyncThunk("auth/register",
-    async ( user, thunkAPI) => {
+    async (user, thunkAPI) => {
 
         const data = await authService.register(user)
 
         // check for errors
-        if(data.errors) {
+        if (data.errors) {
             return thunkAPI.rejectWithValue(data.errors[0])
         }
 
@@ -31,39 +31,39 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 })
 
 export const authSlice = createSlice({
-  name: 'auth',
-  initialState,
-  reducers: {
-    reset: (state) => {
-        state.loading = false;
-        state.error = false;
-        state.success = false; 
+    name: 'auth',
+    initialState,
+    reducers: {
+        reset: (state) => {
+            state.loading = false;
+            state.error = false;
+            state.success = false;
+        },
     },
-  },
-  extraReducers: (builder) => {
-    builder
-    .addCase(register.pending, (state) => {
-        state.loading = true;
-        state.error = false;
-    })
-    .addCase(register.fulfilled, (state, action) => {
-        state.loading = false;
-        state.success = true;
-        state.error = null;
-        state.user = action.payload;
-    })
-    .addCase(register.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-        state.user = null;
-    })
-    .addCase(logout.fulfilled, (state, action) => {
-        state.loading = false;
-        state.success = true;
-        state.error = null;
-        state.user = null;
-    })
-},
+    extraReducers: (builder) => {
+        builder
+            .addCase(register.pending, (state) => {
+                state.loading = true;
+                state.error = false;
+            })
+            .addCase(register.fulfilled, (state, action) => {
+                state.loading = false;
+                state.success = true;
+                state.error = null;
+                state.user = action.payload;
+            })
+            .addCase(register.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+                state.user = null;
+            })
+            .addCase(logout.fulfilled, (state, action) => {
+                state.loading = false;
+                state.success = true;
+                state.error = null;
+                state.user = null;
+            })
+    },
 })
 
 // Action creators are generated for each case reducer function
