@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authSlice from '../src/slices/authSlice';
+
+import authReducer from './slices/authSlice';
+import userReducer from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: authSlice // Use 'auth' as the key, not 'authSlice'
-  }
+    auth: authReducer, // Use 'auth' as the key, not 'authSlice'
+    user: userReducer,
+  },
 });
