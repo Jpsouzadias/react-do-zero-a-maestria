@@ -1,9 +1,23 @@
-import React from 'react'
+import { api, requestConfig } from '../utils/config'
 
-const userService = () => {
-  return (
-    <div>userService</div>
-  )
+// Get user details
+const profile = async (data, token) => {
+  const config = requestConfig("GET", data, token)
+
+  try {
+
+    const res = await fetch(api + "/users", config)
+      .then((res) => res.json())
+      .catch((err) => err);
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const userService = {
+  profile,
 }
 
-export default userService
+export default userService;
