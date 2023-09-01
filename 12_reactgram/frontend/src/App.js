@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
+import EditProfile from './pages/EditProfile/EditProfile';
 
 function App() {
   const { auth, loading } = useAuth();
