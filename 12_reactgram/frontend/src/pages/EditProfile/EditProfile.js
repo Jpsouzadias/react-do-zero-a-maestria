@@ -7,7 +7,7 @@ const EditProfile = () => {
     }
 
     return (
-        <div id="edite-profile">
+        <div id="edit-profile">
             <h2>Edite seus dados</h2>
             <p className="subtitle">Adicione uma imagem de perfil e conte mais sobre você...</p>
             {/* preview da imagem */}
