@@ -9,15 +9,49 @@ import { BsFillEyeFill, BsPencilFill, BsXLg } from "react-icons/bs";
 
 // Hooks
 import { useState, useEffect, useRef } from "react";
-import { UseSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 // Redux
+import { getUserDetails } from "../../slices/userSlice";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
+    const { id } = useParams();
+
+    const dispatch = useDispatch();
+
+    const { user, loading } = useSelector((state) => state.user);
+    const { user: userAuth } = useSelector((state) => state.auth);
+
+    // Photo
+
+    // Load user data
+    useEffect(() => {
+        dispatch(getUserDetails(id));
+    }, [dispatch, id]);
+
+    if (loading) {
+        return <p>Carregando...</p>;
+    }
+
+    // ...
+
+return (
+    <div id="profile">
+      <div className="profile-header">
+        {user && user.profileImage ? (
+          <img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />
+        ) : (
+          <p>Imagem de perfil não disponível</p>
+        )}
+        <div className="profile-description">
+          <h2>{user ? user.name : 'Nome não disponível'}</h2>
+          <h2>{user ? user.bio : 'Bio não disponível'}</h2>
+        </div>
+      </div>
+    </div>
+  );
+  
 }
 
 export default Profile;
