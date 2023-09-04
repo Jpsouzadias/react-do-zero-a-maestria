@@ -6,7 +6,7 @@ const profile = async (data, token) => {
 
   try {
 
-    const res = await fetch(api + "/users", config)
+    const res = await fetch(api + "/users/profile", config)
       .then((res) => res.json())
       .catch((err) => err);
 
