@@ -64,9 +64,9 @@ return (
                 <input type="text" placeholder="Insira um título" />
               </label>
               <label>
-                <span>
-                  <input type="file" />
-                </span>
+                <span>Imagem:</span>
+                <input type="file" />
+                
               </label>
               <input type="submit" value="Postar" />
             </form>
