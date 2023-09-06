@@ -130,13 +130,19 @@ const Profile = () => {
                   />
                 )}
                 {id === userAuth._id ? (
-                  <p>Actions</p>
+                  <div className="actions">
+                    <Link className="btn" to={`/photos/${photo._id}`} >
+                      <BsFillEyeFill />
+                    </Link>
+                    <BsPencilFill />
+                    <BsXLg />
+                  </div>
                 ) : (<Link className="btn" to={`/photos/${photo._id}`} >
                   Ver
                 </Link>)}
               </div>
             ))}
-            {photos.lenght === 0 && <p>Ainda não há fotos publicadas</p>}
+          {photos.lenght === 0 && <p>Ainda não há fotos publicadas</p>}
         </div>
       </div>
     </div >
