@@ -125,7 +125,7 @@ const Profile = () => {
               <div className="photo" key={photo._id}>
                 {photo.image && (
                   <img
-                    src={`${uploads}/photos/${photo.img}`}
+                  src={`${uploads}/photos/${photo.image}`}
                     alt={photo.title}
                   />
                 )}
@@ -142,7 +142,7 @@ const Profile = () => {
                 </Link>)}
               </div>
             ))}
-          {photos.lenght === 0 && <p>Ainda não há fotos publicadas</p>}
+          {photos.length === 0 && <p>Ainda não há fotos publicadas</p>}
         </div>
       </div>
     </div >

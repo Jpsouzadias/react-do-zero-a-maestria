@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const photoSchema = new Schema(
     {
@@ -11,9 +11,9 @@ const photoSchema = new Schema(
         userName: String,
     },
     {
-        timeseries: true
+        timestamps: true,
     }
-)
+);
 
 Photo = mongoose.model("Photo", photoSchema);
 
