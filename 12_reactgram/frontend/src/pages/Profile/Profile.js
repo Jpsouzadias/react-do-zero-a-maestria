@@ -1,6 +1,6 @@
 import "./Profile.css";
 
-import { uploads } from "../../utils/config";
+import { uploads, api } from "../../utils/config";
 
 // Components
 import Message from "../../components/Message";
