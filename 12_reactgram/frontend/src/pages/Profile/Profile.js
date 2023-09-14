@@ -111,7 +111,7 @@ const Profile = () => {
 
     const photoData = {
       title: editTitle,
-      id: editId, 
+      id: editId,
     }
 
     dispatch(updatePhoto(photoData));
@@ -130,7 +130,7 @@ const Profile = () => {
     setEditImage(photo.image);
   };
 
-  const handleCancelEdit = (e) => { 
+  const handleCancelEdit = (e) => {
     hideOrShowsForms();
   };
 
@@ -197,7 +197,7 @@ const Profile = () => {
       <div className="user-photos">
         <h2>Fotos publicadas:</h2>
         <div className="photos-container">
-          {photos &&
+          {photos && photos.length > 0 &&
             photos.map((photo) => (
               <div className="photo" key={photo._id}>
                 {photo.image && (
