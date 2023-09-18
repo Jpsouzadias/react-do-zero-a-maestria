@@ -1,4 +1,4 @@
-import "./Serch.css";
+import "./Search.css";
 
 // Hooks
 import { useEffect } from "react";
@@ -18,4 +18,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default Search;
