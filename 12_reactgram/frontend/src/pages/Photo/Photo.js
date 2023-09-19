@@ -10,7 +10,7 @@ import LikeContainer from "../../components/LikeContainer";
 
 // Hooks
 import { useEffect, useState } from "react";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useResetComponentMessage } from "../../hooks/useResetComponentMessage";
 

@@ -128,6 +128,7 @@ const searchPhotos = async (query, token) => {
             .then((res) => res.json())
             .catch((err) => err);
 
+        return res;
     } catch (error) {
         console.error(error);
     }

@@ -6,7 +6,7 @@ import Message from "../../components/Message";
 
 // Hooks
 import { useEffect, useState } from "react";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Redux
 import { login, reset } from '../../slices/authSlice';
