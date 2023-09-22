@@ -2,10 +2,15 @@ import React from 'react';
 
 function App() {
 
-  // 1 - variaveis
+  // 1 - variáveis
   const name: string = "João";
   const age: number = 21
   const isWorking: boolean = true;
+
+  // 2 - funções
+  const userGreeting = (name: string): string => {
+    return `Olá, ${name}!`;
+  };
 
   return (
     <div className="App">
@@ -15,7 +20,9 @@ function App() {
       {isWorking && (
         <div>
           <p>Está trabalhando!</p>
-        </div>)}
+        </div>
+      )}
+      <h3>{userGreeting(name)}</h3>
     </div>
   );
 }
