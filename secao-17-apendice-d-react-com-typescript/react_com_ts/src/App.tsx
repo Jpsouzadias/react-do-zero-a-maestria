@@ -7,6 +7,9 @@ import FirstComponent from './components/FirstComponent';
 import SecondComponent from './components/SecondComponent';
 import Destructuring from './components/Destructuring';
 
+// 6 - useState
+import State from './components/State';
+
 function App() {
 
   // 1 - variáveis
@@ -36,12 +39,15 @@ function App() {
         title="Primero Post"
         content="Algum conteúdo interessante"
         commentsQty={23}
-        tags={["ts", "js"]} />
+        tags={["ts", "js"]}
+      />
       <Destructuring
         title="Segundo Post"
         content="Mais um conteúdo"
         commentsQty={73}
-        tags={["html", "css"]} />
+        tags={["html", "css"]}
+      />
+      <State />
     </div>
   );
 }
