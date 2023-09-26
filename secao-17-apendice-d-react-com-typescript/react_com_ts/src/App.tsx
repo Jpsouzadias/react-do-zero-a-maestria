@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
 // 4 - importação de componentes
 import FirstComponent from './components/FirstComponent';
@@ -14,6 +14,15 @@ import State from './components/State';
 type textOrNull = string | null;
 
 type fixed = "Isso" | "Ou" | "Aquilo";
+
+// 9 - context
+interface IAppContext {
+  language: string;
+  framework: string;
+  projects: number;
+}
+
+export const AppContext = createContext<IAppContext | null>(null)
 
 function App() {
 
@@ -35,37 +44,47 @@ function App() {
 
   const testandoFixed: fixed = "Isso";
 
+  // 9 - context
+  const contextValue: IAppContext = {
+    language: "JavaScript",
+    framework: "Express",
+    projects: 5,
+  };
+
+
   return (
-    <div className="App">
-      <h1>TypeScript com React</h1>
-      <h2>Nome: {name}</h2>
-      <p>Idade: {age}</p>
-      {isWorking && (
-        <div>
-          <p>Está trabalhando!</p>
-        </div>
-      )}
-      <h3>{userGreeting(name)}</h3>
-      <FirstComponent key={null} type={''} props={undefined} />
-      <SecondComponent name='João' />
-      <Destructuring
-        title="Primero Post"
-        content="Algum conteúdo interessante"
-        commentsQty={23}
-        tags={["ts", "js"]}
-        category={Category.JS}
-      />
-      <Destructuring
-        title="Segundo Post"
-        content="Mais um conteúdo"
-        commentsQty={73}
-        tags={["html", "css"]}
-        category={Category.H}
-      />
-      <State />
-      {myText && <p>Tem texto na variável</p>}
-      {mySecondText && <p>Tem texto na variável</p>}
-    </div>
+    <AppContext.Provider value={contextValue}>
+      <div className="App">
+        <h1>TypeScript com React</h1>
+        <h2>Nome: {name}</h2>
+        <p>Idade: {age}</p>
+        {isWorking && (
+          <div>
+            <p>Está trabalhando!</p>
+          </div>
+        )}
+        <h3>{userGreeting(name)}</h3>
+        <FirstComponent key={null} type={''} props={undefined} />
+        <SecondComponent name='João' />
+        <Destructuring
+          title="Primero Post"
+          content="Algum conteúdo interessante"
+          commentsQty={23}
+          tags={["ts", "js"]}
+          category={Category.JS}
+        />
+        <Destructuring
+          title="Segundo Post"
+          content="Mais um conteúdo"
+          commentsQty={73}
+          tags={["html", "css"]}
+          category={Category.H}
+        />
+        <State />
+        {myText && <p>Tem texto na variável</p>}
+        {mySecondText && <p>Tem texto na variável</p>}
+      </div>
+    </AppContext.Provider>
   );
 }
 
