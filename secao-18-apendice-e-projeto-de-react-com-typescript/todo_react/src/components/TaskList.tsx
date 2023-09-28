@@ -9,8 +9,8 @@ import styles from './TaskList.module.css';
 type Props = {
   taskList: ITask[];
   handleDelete(id: number): void;
-  handleEdit(): void
-}
+  handleEdit(task: ITask): void;
+};
 
 const TaskList = ({ taskList, handleDelete, handleEdit }: Props) => {
   return (
@@ -26,7 +26,7 @@ const TaskList = ({ taskList, handleDelete, handleEdit }: Props) => {
               <i
                 className='bi bi-pencil'
                 onClick={() => {
-                  handleEdit()
+                  handleEdit(task)
                 }}
               ></i>
               <i
